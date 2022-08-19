@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* recommended not to use this always since we are defeating the part of not writing in the css file */
+@layer base {
+  .icon {
+    @apply h-4 cursor-pointer text-gray-300 transition duration-300 ease-out hover:text-white;
+  }
+}
+
+@layer base {
+  :root {
+    --color-text-base: #000;
+    --color-text-hover: #000;
+    --color-fill: theme('colors.slate.200');
+    --color-fill-hover: theme('colors.slate.300');
+    --color-border: #000;
+  }
+
+  .theme-dark {
+    --color-text-base: #fff;
+    --color-text-hover: #fff;
+    --color-fill: theme('colors.slate.700');
+    --color-fill-hover: theme('colors.slate.600');
+    --color-border: #000;
+  }
+
+  .theme-cyberpunk {
+    --color-text-base: #fff;
+    --color-text-hover: #fff;
+    --color-fill: theme('colors.purple.900');
+    --color-fill-hover: theme('colors.purple.800');
+    --color-border: theme('colors.pink.400');
+  }
+}
